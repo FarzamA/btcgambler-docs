@@ -1,1 +1,10 @@
-site_name: My Docs
+site_name: BTCGambler Documentation
+theme:
+  name: material
+  palette:
+    scheme: slate  # dark mode default
+nav:
+  - Home: index.md
+  - Features: features.md
+  - Architecture: architecture.md
+  - Setup: setup.md
