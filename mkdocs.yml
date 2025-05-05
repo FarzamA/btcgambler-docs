@@ -8,3 +8,11 @@ nav:
   - Features: features.md
   - Architecture: architecture.md
   - Setup: setup.md
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+extra_css:
+  - stylesheets/custom-admonitions.css
+extra_javascript:
+  - javascripts/auto-play-video.js

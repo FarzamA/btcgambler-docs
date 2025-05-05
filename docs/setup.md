@@ -11,11 +11,13 @@
 ## Local Deployment (Optional)
 
 ```
-git clone https://github.com/youruser/btcgambler-docs
+git clone https://github.com/FarzamA/btcgambler
 cd btcgambler
 docker compose up --build
 ```
 
 ## Notes
 
-Actual Bitcoin RPC endpoints must be secured and configured in the `.env` file.
+- Actual Bitcoin RPC endpoints must be secured and configured in the `.env` file.
+- For actual code access, contact the author for a private walkthrough.
+

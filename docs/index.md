@@ -13,6 +13,7 @@ Welcome to the public documentation for **BTCGambler** — a real-time crash gam
 BTCGambler is a full-stack crypto gambling app that simulates a high-stakes crash curve with real Bitcoin transaction handling.
 
 It supports:
+
 - Real-time multiplayer gameplay
 - Secure wallet management using Bitcoin Core
 - OAuth login (Google, GitHub, Facebook, Email)
@@ -23,7 +24,18 @@ It supports:
 
 ## 📷 Demo
 
-![Crash Gameplay](media/crash_demo.gif)
+??? chart-line "Gameplay Demo"
+    <div style="display: flex; justify-content: center; margin: 1.5rem 0;">
+        <video 
+            src="media/mp4/crash_gameplay_demo.mp4" 
+            autoplay 
+            muted 
+            playsinline 
+            loop 
+            style="max-width: 100%; border-radius: 12px;">
+        </video>
+    </div>
+<!-- ![Crash Gameplay](media/crash_demo.gif) -->
 
 ---
 
