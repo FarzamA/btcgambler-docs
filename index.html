@@ -44,6 +44,8 @@
       
     
     
+      <link rel="stylesheet" href="stylesheets/custom-admonitions.css">
+    
     <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
@@ -426,15 +428,31 @@
 <hr />
 <h2 id="overview">📌 Overview</h2>
 <p>BTCGambler is a full-stack crypto gambling app that simulates a high-stakes crash curve with real Bitcoin transaction handling.</p>
-<p>It supports:
-- Real-time multiplayer gameplay
-- Secure wallet management using Bitcoin Core
-- OAuth login (Google, GitHub, Facebook, Email)
-- Transaction batching and payout logic
-- Interactive chart, chat, and betting interface</p>
+<p>It supports:</p>
+<ul>
+<li>Real-time multiplayer gameplay</li>
+<li>Secure wallet management using Bitcoin Core</li>
+<li>OAuth login (Google, GitHub, Facebook, Email)</li>
+<li>Transaction batching and payout logic</li>
+<li>Interactive chart, chat, and betting interface</li>
+</ul>
 <hr />
 <h2 id="demo">📷 Demo</h2>
-<p><img alt="Crash Gameplay" src="media/crash_demo.gif" /></p>
+<details class="chart-line">
+<summary>Gameplay Demo</summary>
+<p><div style="display: flex; justify-content: center; margin: 1.5rem 0;">
+    <video 
+        src="media/mp4/crash_gameplay_demo.mp4" 
+        autoplay 
+        muted 
+        playsinline 
+        loop 
+        style="max-width: 100%; border-radius: 12px;">
+    </video>
+</div></p>
+</details>
+<!-- ![Crash Gameplay](media/crash_demo.gif) -->
+
 <hr />
 <h2 id="docs">📁 Docs</h2>
 <ul>
@@ -494,6 +512,8 @@
     
     
       <script src="assets/javascripts/bundle.c8b220af.min.js"></script>
+      
+        <script src="javascripts/auto-play-video.js"></script>
       
     
   </body>
