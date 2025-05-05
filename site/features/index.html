@@ -46,6 +46,8 @@
       
     
     
+      <link rel="stylesheet" href="../stylesheets/custom-admonitions.css">
+    
     <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
@@ -233,6 +235,19 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Features
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -244,6 +259,70 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#authentication" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔐 Authentication
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-it-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      🎮 How It Works
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#guest-user-functionality" class="md-nav__link">
+    <span class="md-ellipsis">
+      👤 Guest User Functionality
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#main-application-view" class="md-nav__link">
+    <span class="md-ellipsis">
+      🏠 Main Application View
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#edge-case-handling" class="md-nav__link">
+    <span class="md-ellipsis">
+      🛡️ Edge Case Handling
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -313,6 +392,59 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#authentication" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔐 Authentication
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-it-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      🎮 How It Works
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#guest-user-functionality" class="md-nav__link">
+    <span class="md-ellipsis">
+      👤 Guest User Functionality
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#main-application-view" class="md-nav__link">
+    <span class="md-ellipsis">
+      🏠 Main Application View
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#edge-case-handling" class="md-nav__link">
+    <span class="md-ellipsis">
+      🛡️ Edge Case Handling
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -327,16 +459,163 @@
 
 
 
-<h1 id="features">🧩 Features</h1>
+<h1 id="features">🔍 Features</h1>
+<hr />
+<h2 id="authentication">🔐 Authentication</h2>
+<p>BTCGambler provides a secure and seamless authentication system with support for:</p>
+<details class="o-auth">
+<summary>OAuth login via Google, Facebook, or Github</summary>
+<p><div style="display: flex; justify-content: center; margin: 1.5rem 0;">
+    <video 
+        src="./../media/mp4/login_modal_btc.mp4" 
+        autoplay 
+        muted 
+        playsinline 
+        loop 
+        style="max-width: 400px; border-radius: 12px;">
+    </video>
+</div></p>
+</details>
+<details class="e-mail-registration">
+<summary>Email-based registration with background loading screen</summary>
+<p><div style="display: flex; justify-content: center; margin: 1.5rem 0;">
+    <video 
+        src="./../media/mp4/email_signup_btc.mp4" 
+        autoplay 
+        muted 
+        playsinline 
+        loop 
+        style="max-width: 100%; border-radius: 12px;">
+    </video>
+</div></p>
+</details>
+<details class="e-mail-verification">
+<summary>Email verification for user to be activated </summary>
+<p><div style="display: flex; justify-content: center; margin: 1.5rem 0;">
+    <video 
+        src="./../media/mp4/email_verification_btc.mp4" 
+        autoplay 
+        muted 
+        playsinline 
+        loop 
+        style="max-width: 100%; border-radius: 12px;">
+    </video>
+</div></p>
+</details>
+<details class="user-login">
+<summary>Username based login</summary>
+<p><div style="display: flex; justify-content: center; margin: 1.5rem 0;">
+    <video 
+        src="./../media/mp4/username_login_btc.mp4" 
+        autoplay 
+        muted 
+        playsinline 
+        loop 
+        style="max-width: 100%; border-radius: 12px;">
+    </video>
+</div></p>
+</details>
+<details class="qr-code">
+<summary>Two-Factor Authentication (2FA) for enhanced security (optional)</summary>
+<p><div style="display: flex; justify-content: center; margin: 1.5rem 0;">
+    <video 
+        src="./../media/mp4/2fa_setup_btc.mp4" 
+        autoplay 
+        muted 
+        playsinline 
+        loop 
+        style="max-width: 100%; border-radius: 12px;">
+    </video>
+</div></p>
+</details>
+<details class="e-mail-verification">
+<summary>Email-based password reset</summary>
+<p><div style="display: flex; justify-content: center; margin: 1.5rem 0;">
+    <video 
+        src="./../media/mp4/forgot_pass_btc.mp4" 
+        autoplay 
+        muted 
+        playsinline 
+        loop 
+        style="max-width: 100%; border-radius: 12px;">
+    </video>
+</div></p>
+</details>
+<hr />
+<h2 id="how-it-works">🎮 How It Works</h2>
 <ul>
-<li><strong>Real-Time Game Loop</strong>: Crash multiplier tracked live with WebSockets.</li>
-<li><strong>WebSocket Engine</strong>: Automatically pauses/resumes when users join or leave.</li>
-<li><strong>Secure Wallet System</strong>: Built on Bitcoin Core with strict UTXO control.</li>
-<li><strong>Net Transactions</strong>: Combine payouts to reduce fees.</li>
-<li><strong>Frontend</strong>: React + Material UI with chart, chat, and betting panel.</li>
-<li><strong>Authentication</strong>: OAuth (Google, GitHub, Facebook) + 2FA.</li>
-<li><strong>Chat System</strong>: Real-time user chat with live updates.</li>
+<li>The game starts at a 1.00x multiplier.</li>
+<li>The multiplier increases in real time.</li>
+<li>A randomly determined "crash point" is hidden from the user.</li>
+<li>If the user cashes out before the crash, they win their bet multiplied by the current multiplier.</li>
+<li>If they wait too long, the game crashes and they lose their bet.</li>
 </ul>
+<details class="chart-line">
+<summary>Gameplay Demo</summary>
+<p><div style="display: flex; justify-content: center; margin: 1.5rem 0;">
+    <video 
+        src="./../media/mp4/crash_gameplay_demo.mp4" 
+        autoplay 
+        muted 
+        playsinline 
+        loop 
+        style="max-width: 100%; border-radius: 12px;">
+    </video>
+</div></p>
+</details>
+<hr />
+<h2 id="guest-user-functionality">👤 Guest User Functionality</h2>
+<p>BTCGambler supports guest login for users who wish to explore without creating an account:</p>
+<ul>
+<li>Guests can interact with the crash game temporarily, without registration</li>
+<li>All guest-related data (e.g. bets, chat messages) is deleted upon logout or session expiration</li>
+<li>Guests cannot access the Bitcoin faucet, make deposits/withdrawals, or edit profiles</li>
+<li>Automatic cleanup — The system ensures full cleanup of guest activity to maintain a clean state</li>
+</ul>
+<hr />
+<h2 id="main-application-view">🏠 Main Application View</h2>
+<p>After logging in, users land on the game dashboard — a real-time interface for placing bets and chatting with others.</p>
+<details class="sun-moon">
+<summary>Sleek dark-blue theme mode enabled by default, with an optional ultra dark mode for visual flexibility</summary>
+<p><div style="display: flex; justify-content: center; margin: 1.5rem 0;">
+    <video 
+        src="./../media/mp4/dark_mode_demo_btc.mp4" 
+        autoplay 
+        muted 
+        playsinline 
+        loop 
+        style="max-width: 100%; border-radius: 12px;">
+    </video>
+</div></p>
+</details>
+<details class="message-circle-more">
+<summary>Live chat feature to interact with users while playing the game</summary>
+<p><div style="display: flex; justify-content: center; margin: 1.5rem 0;">
+    <video 
+        src="./../media/mp4/live_chat_demo.mp4" 
+        autoplay 
+        muted 
+        playsinline 
+        loop 
+        style="max-width: 400px; border-radius: 12px;">
+    </video>
+</div></p>
+</details>
+<hr />
+<h2 id="edge-case-handling">🛡️ Edge Case Handling</h2>
+<ul>
+<li>Late joins are blocked after a set threshold</li>
+<li>Disconnections auto-cashout at last known multiplier</li>
+<li>Crash randomness is provably fair (e.g., hash-based)</li>
+</ul>
+<hr />
+<!-- - **Real-Time Game Loop**: Crash multiplier tracked live with WebSockets.
+- **WebSocket Engine**: Automatically pauses/resumes when users join or leave.
+- **Secure Wallet System**: Built on Bitcoin Core with strict UTXO control.
+- **Net Transactions**: Combine payouts to reduce fees.
+- **Frontend**: React + Material UI with chart, chat, and betting panel.
+- **Authentication**: OAuth (Google, GitHub, Facebook) + 2FA.
+- **Chat System**: Real-time user chat with live updates. -->
 
 
 
@@ -389,6 +668,8 @@
     
     
       <script src="../assets/javascripts/bundle.c8b220af.min.js"></script>
+      
+        <script src="../javascripts/auto-play-video.js"></script>
       
     
   </body>

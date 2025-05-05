@@ -44,6 +44,8 @@
       
     
     
+      <link rel="stylesheet" href="../stylesheets/custom-admonitions.css">
+    
     <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
@@ -430,12 +432,15 @@
 <li>Redis</li>
 </ul>
 <h2 id="local-deployment-optional">Local Deployment (Optional)</h2>
-<pre><code>git clone https://github.com/youruser/btcgambler-docs
+<div class="highlight"><pre><span></span><code>git clone https://github.com/FarzamA/btcgambler
 cd btcgambler
 docker compose up --build
-</code></pre>
+</code></pre></div>
 <h2 id="notes">Notes</h2>
-<p>Actual Bitcoin RPC endpoints must be secured and configured in the <code>.env</code> file.</p>
+<ul>
+<li>Actual Bitcoin RPC endpoints must be secured and configured in the <code>.env</code> file.</li>
+<li>For actual code access, contact the author for a private walkthrough.</li>
+</ul>
 
 
 
@@ -488,6 +493,8 @@ docker compose up --build
     
     
       <script src="../assets/javascripts/bundle.c8b220af.min.js"></script>
+      
+        <script src="../javascripts/auto-play-video.js"></script>
       
     
   </body>

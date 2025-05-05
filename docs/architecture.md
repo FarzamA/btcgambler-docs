@@ -11,6 +11,6 @@ BTCGambler combines blockchain infrastructure with a real-time web stack.
 - **Blockchain**: Bitcoin Core integration for real transactions
 - **Reverse Proxy**: Caddy + Docker Compose
 
-## Diagram
+<!-- ## Diagram
 
-*Insert architecture diagram here (optional)*
+*Insert architecture diagram here (optional)* -->
