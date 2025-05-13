@@ -2,7 +2,7 @@
 
 Welcome to the public documentation for **BTCGambler** — a real-time crash gambling game built on Bitcoin and WebSockets.
 
-📌 **Note:** This project is home-hosted. The live demo is generally available between **9 AM and 5 PM EST**. If the link is temporarily down, please refer to this documentation to explore features, architecture, and usage.
+📌 **Note:** This project is home-hosted. The live demo is generally available **Monday - Friday between 9 AM and 5 PM EST**. If the link is temporarily down, please refer to this documentation to explore features, architecture, and usage.
 
 👉 [Live Demo](https://btcgambler.duckdns.org/login)
 

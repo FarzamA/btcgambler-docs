@@ -312,9 +312,36 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#edge-case-handling" class="md-nav__link">
+  <a href="#betting-interface" class="md-nav__link">
     <span class="md-ellipsis">
-      🛡️ Edge Case Handling
+      🎮 Betting Interface
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bet-tracking" class="md-nav__link">
+    <span class="md-ellipsis">
+      📊 Bet Tracking
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#provable-fairness" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔐 Provable Fairness
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bitcoin-integration" class="md-nav__link">
+    <span class="md-ellipsis">
+      🪙 Bitcoin Integration
     </span>
   </a>
   
@@ -435,9 +462,36 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#edge-case-handling" class="md-nav__link">
+  <a href="#betting-interface" class="md-nav__link">
     <span class="md-ellipsis">
-      🛡️ Edge Case Handling
+      🎮 Betting Interface
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bet-tracking" class="md-nav__link">
+    <span class="md-ellipsis">
+      📊 Bet Tracking
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#provable-fairness" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔐 Provable Fairness
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bitcoin-integration" class="md-nav__link">
+    <span class="md-ellipsis">
+      🪙 Bitcoin Integration
     </span>
   </a>
   
@@ -588,6 +642,19 @@
     </video>
 </div></p>
 </details>
+<details class="chart-line">
+<summary>Main chart with gameplay and betting form</summary>
+<p><div style="display: flex; justify-content: center; margin: 1.5rem 0;">
+    <video 
+        src="./../media/mp4/chart_demo.mp4" 
+        autoplay 
+        muted 
+        playsinline 
+        loop 
+        style="max-width: 100%; border-radius: 12px;">
+    </video>
+</div></p>
+</details>
 <details class="message-circle-more">
 <summary>Live chat feature to interact with users while playing the game</summary>
 <p><div style="display: flex; justify-content: center; margin: 1.5rem 0;">
@@ -601,21 +668,134 @@
     </video>
 </div></p>
 </details>
+<details class="circle-dollar-sign">
+<summary>Switch between FAKE currency and BTC</summary>
+<p><div style="display: flex; justify-content: center; margin: 1.5rem 0;">
+    <video 
+        src="./../media/mp4/currency_switch.mp4" 
+        autoplay 
+        muted 
+        playsinline 
+        loop 
+        style="max-width: 100%; border-radius: 12px;">
+    </video>
+</div></p>
+</details>
 <hr />
-<h2 id="edge-case-handling">🛡️ Edge Case Handling</h2>
+<h2 id="betting-interface">🎮 Betting Interface</h2>
+<p>The <strong>Betting Interface</strong> allows users to seamlessly participate in each round with a real-time, responsive experience. It’s designed for clarity, speed, and visual feedback—helping players make quick, informed decisions.</p>
+<p>Key features include:</p>
 <ul>
-<li>Late joins are blocked after a set threshold</li>
-<li>Disconnections auto-cashout at last known multiplier</li>
-<li>Crash randomness is provably fair (e.g., hash-based)</li>
+<li>Interactive interface to place and pull bets during live rounds  </li>
+<li>Real-time display of active bets with instant outcome updates  </li>
+<li>Visual feedback for wins and losses as they happen  </li>
+<li>Dynamic history bar showcasing recent betting activity  </li>
+<li>Color-coded multipliers for enhanced visual clarity and user experience  </li>
 </ul>
+<details class="banknote">
+<summary>Betting Interface Demo</summary>
+<p><div style="display: flex; justify-content: center; margin: 1.5rem 0;">
+    <video 
+        src="./../media/mp4/betting_interface_demo.mp4" 
+        autoplay 
+        muted 
+        playsinline 
+        loop 
+        style="max-width: 100%; border-radius: 12px;">
+    </video>
+</div></p>
+</details>
 <hr />
-<!-- - **Real-Time Game Loop**: Crash multiplier tracked live with WebSockets.
-- **WebSocket Engine**: Automatically pauses/resumes when users join or leave.
-- **Secure Wallet System**: Built on Bitcoin Core with strict UTXO control.
-- **Net Transactions**: Combine payouts to reduce fees.
-- **Frontend**: React + Material UI with chart, chat, and betting panel.
-- **Authentication**: OAuth (Google, GitHub, Facebook) + 2FA.
-- **Chat System**: Real-time user chat with live updates. -->
+<h2 id="bet-tracking">📊 Bet Tracking</h2>
+<p>The <strong>All Bets</strong> page provides a comprehensive, timestamped log of all wagers placed across the platform. This feature enables users to monitor historical activity, analyze betting behavior, and ensure transparency.</p>
+<p>Key features include:</p>
+<ul>
+<li>A sortable, tabular view of all recorded bets  </li>
+<li>Filtering by username for targeted analysis  </li>
+<li>Sorting options by bet amount, multiplier, winnings, and timestamp  </li>
+<li>Display of seed hashes for each bet to support provable fairness verification </li>
+</ul>
+<details class="receipt">
+<summary>All Bets Page</summary>
+<p><div style="display: flex; justify-content: center; margin: 1.5rem 0;">
+    <video 
+        src="./../media/mp4/all_bets_demo.mp4" 
+        autoplay 
+        muted 
+        playsinline 
+        loop 
+        style="max-width: 100%; border-radius: 12px;">
+    </video>
+</div></p>
+</details>
+<hr />
+<h2 id="provable-fairness">🔐 Provable Fairness</h2>
+<p><strong>Provable Fairness</strong> is a cryptographic guarantee that ensures every crash result on the platform is unbiased and tamper-proof. This system allows users to independently verify that the outcome of each round was generated fairly—without any manipulation from the server or client.</p>
+<p>Key features of our implementation:</p>
+<ul>
+<li>Every round is determined using a combination of <strong>Server Seed</strong>, <strong>Client Seed</strong>, and <strong>Nonce</strong>, hashed using HMAC-SHA256  </li>
+<li>A <strong>Server Seed Hash</strong> is published <em>before</em> the round starts, locking in the outcome  </li>
+<li>After the round ends, the <strong>Server Seed</strong> is revealed, allowing users to verify the crash point  </li>
+<li>A built-in <strong>Crash Point Verifier</strong> lets users input the seeds and nonce to validate results themselves  </li>
+<li>All rounds are stored and visible in the <strong>Provably Fair</strong> audit log for full transparency  </li>
+<li>The fairness logic is open and documented—every player can inspect how crash points are calculated  </li>
+</ul>
+<p>Together, these features ensure that trust is not assumed—it’s <em>provable</em>.</p>
+<details class="lock">
+<summary>Provable Fairness</summary>
+<p><div style="display: flex; justify-content: center; margin: 1.5rem 0;">
+    <video 
+        src="./../media/mp4/provable_fairness.mp4" 
+        autoplay 
+        muted 
+        playsinline 
+        loop 
+        style="max-width: 100%; border-radius: 12px;">
+    </video>
+</div></p>
+</details>
+<details class="chart-line">
+<summary>Distribution of Multipliers Over 10000 Iterations</summary>
+<p><img alt="Guest Session Demo" src="../media/png/crash_distribution.png" /></p>
+</details>
+<hr />
+<h2 id="bitcoin-integration">🪙 Bitcoin Integration</h2>
+<p>To introduce realism and technical depth, the platform includes native Bitcoin-based betting functionality, simulating a real blockchain environment while preserving a seamless user experience.</p>
+<p>Key features include:</p>
+<ul>
+<li>User-associated Bitcoin wallets for managing in-game funds</li>
+<li>Ability to send BTC between users via unique wallet addresses</li>
+<li>Transaction queuing and batching to simulate fee-efficient network behavior</li>
+<li>Full transaction history with support for sorting, and auditability</li>
+<li>Designed to mirror real-world blockchain dynamics within a controlled environment</li>
+</ul>
+<details class="droplet">
+<summary>A 0.5 BTC faucet claimable every 24 hours for testing and gameplay</summary>
+<p><div style="display: flex; justify-content: center; margin: 1.5rem 0;">
+    <video 
+        src="./../media/mp4/faucet_demo.mp4" 
+        autoplay 
+        muted 
+        playsinline 
+        loop 
+        style="max-width: 100%; border-radius: 12px;">
+    </video>
+</div></p>
+</details>
+<details class="lock">
+<summary>Transaction Demo</summary>
+<p><div style="display: flex; justify-content: center; margin: 1.5rem 0;">
+    <video 
+        src="./../media/mp4/send_tx_demo.mp4" 
+        autoplay 
+        muted 
+        playsinline 
+        loop 
+        style="max-width: 100%; border-radius: 12px;">
+    </video>
+</div></p>
+</details>
+<hr />
 
 
 
