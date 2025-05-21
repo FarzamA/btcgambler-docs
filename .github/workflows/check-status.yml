@@ -1,0 +1,35 @@
+name: Check App Status
+
+on:
+  schedule:
+    - cron: "*/5 * * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout gh-pages branch
+        uses: actions/checkout@v3
+        with:
+          ref: gh-pages
+
+      - name: Check site status and write to file
+        run: |
+          mkdir -p status
+          echo "Checked: $(date -u)" > status/status.txt
+          curl -Is https://btcgambler.duckdns.org/login | head -n 1 >> status/status.txt
+
+      - name: Commit and push
+        env:
+          TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          git config user.name "Status Bot"
+          git config user.email "actions@github.com"
+          git add status/status.txt
+          git commit -m "Update status" || echo "No changes"
+          git push https://x-access-token:${TOKEN}@github.com/${{ github.repository }}.git
