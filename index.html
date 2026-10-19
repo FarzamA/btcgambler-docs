@@ -6,6 +6,8 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
+        <meta name="description" content="Public docs for Crash, a provably fair crash game played with demo coins (formerly BTCGambler).">
+      
       
       
       
@@ -21,7 +23,7 @@
     
     
       
-        <title>BTCGambler Documentation</title>
+        <title>Crash Documentation</title>
       
     
     
@@ -72,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#btcgambler" class="md-skip">
+        <a href="#crash" class="md-skip">
           Skip to content
         </a>
       
@@ -88,7 +90,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="." title="BTCGambler Documentation" class="md-header__button md-logo" aria-label="BTCGambler Documentation" data-md-component="logo">
+    <a href="." title="Crash Documentation" class="md-header__button md-logo" aria-label="Crash Documentation" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -102,7 +104,7 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            BTCGambler Documentation
+            Crash Documentation
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
@@ -186,13 +188,13 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="." title="BTCGambler Documentation" class="md-nav__button md-logo" aria-label="BTCGambler Documentation" data-md-component="logo">
+    <a href="." title="Crash Documentation" class="md-nav__button md-logo" aria-label="Crash Documentation" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
 
     </a>
-    BTCGambler Documentation
+    Crash Documentation
   </label>
   
   <ul class="md-nav__list" data-md-scrollfix>
@@ -267,18 +269,7 @@
   <a href="#overview" class="md-nav__link">
     <span class="md-ellipsis">
       
-        📌 Overview
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#demo" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        📷 Demo
+        Overview
       
     </span>
   </a>
@@ -289,7 +280,7 @@
   <a href="#docs" class="md-nav__link">
     <span class="md-ellipsis">
       
-        📁 Docs
+        Docs
       
     </span>
   </a>
@@ -415,18 +406,7 @@
   <a href="#overview" class="md-nav__link">
     <span class="md-ellipsis">
       
-        📌 Overview
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#demo" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        📷 Demo
+        Overview
       
     </span>
   </a>
@@ -437,7 +417,7 @@
   <a href="#docs" class="md-nav__link">
     <span class="md-ellipsis">
       
-        📁 Docs
+        Docs
       
     </span>
   </a>
@@ -461,45 +441,31 @@
 
 
 
-<h1 id="btcgambler">BTCGambler</h1>
-<p>Welcome to the public documentation for <strong>BTCGambler</strong> — a real-time crash gambling game built on Bitcoin and WebSockets.</p>
-<p>📌 <strong>Note:</strong> The app now lives at <strong>crash.4zam.dev</strong> under its new name, <strong>Crash</strong>. Sign in with a 4zam account or play as a guest with demo coins (no real value).</p>
-<p>👉 <a href="https://crash.4zam.dev">Live Demo</a>
+<h1 id="crash">Crash</h1>
+<p>Crash is a real-time multiplayer crash game played with demo coins. Every round is provably fair, and you can check any round in your browser.</p>
+<p>Formerly BTCGambler.</p>
+<p><a href="https://crash.4zam.dev">Play Crash</a>
 <span id="app-status-indicator" style="margin-left: 10px; font-weight: bold;"></span></p>
+<div class="admonition note">
+<p class="admonition-title">Demo coins only</p>
+<p>Crash uses demo coins. They have no real value. There is no way to pay in money or cash out.</p>
+</div>
+<p><img alt="Crash game page during a round" src="media/img/game.png" /></p>
 <hr />
-<h2 id="overview">📌 Overview</h2>
-<p>BTCGambler is a full-stack crypto gambling app that simulates a high-stakes crash curve with real Bitcoin transaction handling.</p>
-<p>It supports:</p>
+<h2 id="overview">Overview</h2>
 <ul>
-<li>Real-time multiplayer gameplay</li>
-<li>Secure wallet management using Bitcoin Core</li>
-<li>Sign in with 4zam (Google, Microsoft or GitHub) or play as a guest</li>
-<li>Transaction batching and payout logic</li>
-<li>Interactive chart, chat, and betting interface</li>
+<li><strong>Play in one click.</strong> Continue as a guest, or log in with a 4zam account (Google, Microsoft or GitHub).</li>
+<li><strong>Live rounds.</strong> A multiplier climbs from 1.00x until it crashes. Pull out before the crash to win.</li>
+<li><strong>Provably fair.</strong> Each round is seeded from a published hash chain and a future Bitcoin block. A built-in verifier recomputes the crash point.</li>
+<li><strong>Two demo currencies.</strong> Fake Points (FAKE) and demo Bitcoin (BTC) on a private test network.</li>
+<li><strong>Live chat</strong> and a full bet history.</li>
 </ul>
 <hr />
-<h2 id="demo">📷 Demo</h2>
-<details class="chart-line">
-<summary>Gameplay Demo</summary>
-<p><div style="display: flex; justify-content: center; margin: 1.5rem 0;">
-    <video 
-        src="media/mp4/crash_gameplay_demo.mp4" 
-        autoplay 
-        muted 
-        playsinline 
-        loop 
-        style="max-width: 100%; border-radius: 12px;">
-    </video>
-</div></p>
-</details>
-<!-- ![Crash Gameplay](media/crash_demo.gif) -->
-
-<hr />
-<h2 id="docs">📁 Docs</h2>
+<h2 id="docs">Docs</h2>
 <ul>
-<li><a href="features/">Features</a></li>
-<li><a href="architecture/">Architecture</a></li>
-<li><a href="setup/">Setup Instructions</a></li>
+<li><a href="features/">Features</a>: how the game, sign-in, fairness and wallet work</li>
+<li><a href="architecture/">Architecture</a>: the services behind the game</li>
+<li><a href="setup/">Setup</a>: running Crash locally</li>
 </ul>
 
 

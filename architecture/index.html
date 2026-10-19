@@ -6,6 +6,8 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
+        <meta name="description" content="Public docs for Crash, a provably fair crash game played with demo coins (formerly BTCGambler).">
+      
       
       
       
@@ -23,7 +25,7 @@
     
     
       
-        <title>Architecture - BTCGambler Documentation</title>
+        <title>Architecture - Crash Documentation</title>
       
     
     
@@ -90,7 +92,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href=".." title="BTCGambler Documentation" class="md-header__button md-logo" aria-label="BTCGambler Documentation" data-md-component="logo">
+    <a href=".." title="Crash Documentation" class="md-header__button md-logo" aria-label="Crash Documentation" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -104,7 +106,7 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            BTCGambler Documentation
+            Crash Documentation
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
@@ -188,13 +190,13 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href=".." title="BTCGambler Documentation" class="md-nav__button md-logo" aria-label="BTCGambler Documentation" data-md-component="logo">
+    <a href=".." title="Crash Documentation" class="md-nav__button md-logo" aria-label="Crash Documentation" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
 
     </a>
-    BTCGambler Documentation
+    Crash Documentation
   </label>
   
   <ul class="md-nav__list" data-md-scrollfix>
@@ -320,10 +322,54 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#components" class="md-nav__link">
+  <a href="#stack" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Components
+        Stack
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#services" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Services
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#money" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Money
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rounds-and-fairness" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Rounds and fairness
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#operations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Operations
       
     </span>
   </a>
@@ -392,10 +438,54 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#components" class="md-nav__link">
+  <a href="#stack" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Components
+        Stack
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#services" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Services
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#money" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Money
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rounds-and-fairness" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Rounds and fairness
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#operations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Operations
       
     </span>
   </a>
@@ -419,20 +509,86 @@
 
 
 
-<h1 id="architecture">🏗️ Architecture</h1>
-<p>BTCGambler combines blockchain infrastructure with a real-time web stack.</p>
-<h2 id="components">Components</h2>
+<h1 id="architecture">Architecture</h1>
+<p>Crash runs as one Docker Compose stack behind a host reverse proxy. The server is the authority for every round: the browser only sends bets and cash-outs.</p>
+<hr />
+<h2 id="stack">Stack</h2>
+<table>
+<thead>
+<tr>
+<th>Part</th>
+<th>Technology</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Frontend</td>
+<td>React, TypeScript, Vite, Tailwind and shadcn/ui</td>
+</tr>
+<tr>
+<td>Backend</td>
+<td>Django 5.2 on Python 3.12 with Django REST Framework</td>
+</tr>
+<tr>
+<td>Realtime</td>
+<td>Django Channels on daphne, with a Redis channel layer (WebSockets)</td>
+</tr>
+<tr>
+<td>Background jobs</td>
+<td>Celery worker and Celery beat</td>
+</tr>
+<tr>
+<td>Data</td>
+<td>PostgreSQL 16 and Redis 7 (Redis holds no durable state)</td>
+</tr>
+<tr>
+<td>Chain</td>
+<td>Bitcoin Core in regtest mode, reachable only inside the stack</td>
+</tr>
+<tr>
+<td>Sign-in</td>
+<td>4zam (OpenID Connect) and one-click guests</td>
+</tr>
+<tr>
+<td>Web</td>
+<td>Caddy serves the app and proxies the API and WebSockets. A host Caddy handles TLS.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="services">Services</h2>
 <ul>
-<li><strong>Frontend</strong>: React + Material UI</li>
-<li><strong>Backend</strong>: Django</li>
-<li><strong>Realtime Engine</strong>: WebSockets</li>
-<li><strong>Worker</strong>: Celery for payout, logging, broadcasts</li>
-<li><strong>Blockchain</strong>: Bitcoin Core integration for real transactions</li>
-<li><strong>Reverse Proxy</strong>: Caddy + Docker Compose</li>
+<li><strong>web:</strong> serves the built frontend and forwards <code>/api</code> and <code>/ws</code> to the backend.</li>
+<li><strong>backend:</strong> the Django API and WebSocket server (game updates, live bets and chat).</li>
+<li><strong>game-engine:</strong> a single process that runs the rounds: betting window, multiplier, crash and settlement.</li>
+<li><strong>worker and beat:</strong> Celery jobs for faucet payouts, withdrawals, deposit credits, block mining on the test network and guest cleanup.</li>
+<li><strong>fairness-sealer:</strong> checks every 5 minutes for a committed chain whose salt block has 6 confirmations, and records the block hash once two block explorers agree on it.</li>
+<li><strong>postgres:</strong> players, bets, rounds, the fairness chain and the money ledger.</li>
+<li><strong>redis:</strong> the WebSocket channel layer and the Celery broker.</li>
+<li><strong>bitcoind:</strong> the regtest Bitcoin node used by the faucet and withdrawals.</li>
+<li><strong>migrate and wallet setup:</strong> one-shot jobs that run database migrations and prepare the node wallet on deploy.</li>
 </ul>
-<!-- ## Diagram
-
-*Insert architecture diagram here (optional)* -->
+<hr />
+<h2 id="money">Money</h2>
+<ul>
+<li>Every balance change is an entry in a ledger in PostgreSQL. Bets settle there instantly.</li>
+<li>Only the faucet and withdrawals touch the regtest chain. Withdrawals are queued and sent by a background job.</li>
+<li>Nothing in the stack has real value: FAKE is a play currency and BTC lives on a private regtest network.</li>
+</ul>
+<hr />
+<h2 id="rounds-and-fairness">Rounds and fairness</h2>
+<ul>
+<li>The engine only runs rounds while at least one player is connected.</li>
+<li>Each round's seed comes from a pre-published SHA-256 hash chain, salted with the hash of a future Bitcoin block. See <a href="../features/#provably-fair">Provably fair</a>.</li>
+<li>If no sealed chain covers the next round, the engine pauses instead of falling back to a house-picked seed.</li>
+</ul>
+<hr />
+<h2 id="operations">Operations</h2>
+<ul>
+<li><strong>CI</strong> runs on every pull request and every push to main: a secret scan, backend tests, frontend lint, tests and build, deploy script checks and an end-to-end smoke test of the full production stack (deploy, play a round, back up, restore and roll back).</li>
+<li><strong>Deploys:</strong> a staging stack deploys on every push to the staging branch. Production deploys are started by hand.</li>
+<li><strong>Backups</strong> of the database and the node wallet run daily, and a restore drill runs weekly.</li>
+</ul>
 
 
 

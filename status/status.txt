@@ -1,2 +1,0 @@
-Checked: Mon Oct 19 19:06:00 UTC 2026
-HTTP/2 200 

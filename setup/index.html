@@ -6,6 +6,8 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
+        <meta name="description" content="Public docs for Crash, a provably fair crash game played with demo coins (formerly BTCGambler).">
+      
       
       
       
@@ -21,7 +23,7 @@
     
     
       
-        <title>Setup - BTCGambler Documentation</title>
+        <title>Setup - Crash Documentation</title>
       
     
     
@@ -72,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#setup-instructions" class="md-skip">
+        <a href="#setup" class="md-skip">
           Skip to content
         </a>
       
@@ -88,7 +90,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href=".." title="BTCGambler Documentation" class="md-header__button md-logo" aria-label="BTCGambler Documentation" data-md-component="logo">
+    <a href=".." title="Crash Documentation" class="md-header__button md-logo" aria-label="Crash Documentation" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -102,7 +104,7 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            BTCGambler Documentation
+            Crash Documentation
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
@@ -186,13 +188,13 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href=".." title="BTCGambler Documentation" class="md-nav__button md-logo" aria-label="BTCGambler Documentation" data-md-component="logo">
+    <a href=".." title="Crash Documentation" class="md-nav__button md-logo" aria-label="Crash Documentation" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
 
     </a>
-    BTCGambler Documentation
+    Crash Documentation
   </label>
   
   <ul class="md-nav__list" data-md-scrollfix>
@@ -356,10 +358,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#local-deployment-optional" class="md-nav__link">
+  <a href="#run-the-whole-stack-locally" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Local Deployment (Optional)
+        Run the whole stack locally
       
     </span>
   </a>
@@ -367,10 +369,21 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#notes" class="md-nav__link">
+  <a href="#frontend-only" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Notes
+        Frontend only
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tests" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tests
       
     </span>
   </a>
@@ -423,10 +436,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#local-deployment-optional" class="md-nav__link">
+  <a href="#run-the-whole-stack-locally" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Local Deployment (Optional)
+        Run the whole stack locally
       
     </span>
   </a>
@@ -434,10 +447,21 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#notes" class="md-nav__link">
+  <a href="#frontend-only" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Notes
+        Frontend only
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tests" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tests
       
     </span>
   </a>
@@ -461,25 +485,44 @@
 
 
 
-<h1 id="setup-instructions">⚙️ Setup Instructions</h1>
-<blockquote>
-<p>NOTE: This documentation is for demonstration purposes only. Source code is private.</p>
-</blockquote>
+<h1 id="setup">Setup</h1>
+<div class="admonition note">
+<p class="admonition-title">Source code</p>
+<p>The Crash source code is private. These steps are for people with access to the repository. To see the game, <a href="https://crash.4zam.dev">play it live</a>.</p>
+</div>
+<hr />
 <h2 id="requirements">Requirements</h2>
 <ul>
-<li>Docker + Docker Compose</li>
-<li>A synced Bitcoin Core node (testnet or mainnet)</li>
-<li>Redis</li>
+<li>Docker with Docker Compose 2.24 or newer</li>
+<li>Python 3, curl, <code>flock</code> and <code>ss</code> (used by the deploy script)</li>
+<li>Node.js 20.19 or newer, for frontend development and frontend tests</li>
 </ul>
-<h2 id="local-deployment-optional">Local Deployment (Optional)</h2>
-<div class="highlight"><pre><span></span><code>git clone https://github.com/FarzamA/btcgambler
-cd btcgambler
-docker compose up --build
+<p>You do not need a Bitcoin node or a Redis server: the stack runs its own.</p>
+<hr />
+<h2 id="run-the-whole-stack-locally">Run the whole stack locally</h2>
+<p>The production Compose file runs locally as the <code>local</code> stack. It uses plain HTTP, generates throwaway secrets and allows guest sign-in only.</p>
+<div class="highlight"><pre><span></span><code>git<span class="w"> </span>rev-parse<span class="w"> </span>HEAD<span class="w"> </span>&gt;<span class="w"> </span>REVISION
+bash<span class="w"> </span>deploy/deploy.sh<span class="w"> </span>--stack<span class="w"> </span><span class="nb">local</span>
 </code></pre></div>
-<h2 id="notes">Notes</h2>
+<p>Then open <a href="http://crash.localhost:18099">http://crash.localhost:18099</a>.</p>
+<div class="admonition info">
+<p class="admonition-title">Rounds pause until a chain is sealed</p>
+<p>The game only runs rounds covered by a sealed fairness chain. A fresh local stack shows "Rounds are paused" until one is set up. Sealing a chain needs internet access to public Bitcoin block explorers and a future Bitcoin block with 6 confirmations, so expect about 2 to 3 hours from commit to the first round. The repository's fairness seeding runbook has the steps.</p>
+</div>
+<hr />
+<h2 id="frontend-only">Frontend only</h2>
+<p>To work on the frontend against a backend that is already running:</p>
+<div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>frontend
+npm<span class="w"> </span>ci
+npm<span class="w"> </span>run<span class="w"> </span>dev
+</code></pre></div>
+<p>The dev server runs on <a href="http://localhost:5173">http://localhost:5173</a> and proxies <code>/api</code> and <code>/ws</code> to a backend at <a href="http://localhost:8000">http://localhost:8000</a>. Set <code>VITE_DEV_BACKEND</code> to use a backend somewhere else.</p>
+<hr />
+<h2 id="tests">Tests</h2>
 <ul>
-<li>Actual Bitcoin RPC endpoints must be secured and configured in the <code>.env</code> file.</li>
-<li>For actual code access, contact the author for a private walkthrough.</li>
+<li>Backend: <code>pytest</code> in <code>backend/</code>, against a PostgreSQL and a Redis.</li>
+<li>Frontend: <code>npm run lint</code>, <code>npm run test:unit</code> and <code>npm run build</code> in <code>frontend/</code>.</li>
+<li>Deploy package: the scripts in <code>deploy/tests/</code>, including a full smoke test of the production stack.</li>
 </ul>
 
 
