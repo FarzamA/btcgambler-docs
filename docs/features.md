@@ -8,7 +8,7 @@
 
 There are two ways in:
 
-- **Continue as Guest.** One click creates a guest player with a generated name (for example `player-ab12cd34ef`) and 1,000 FAKE. There is no password.
+- **Continue as Guest.** One click creates a guest player with a generated name (for example `player-ab23cd45ef`) and 1,000 FAKE. There is no password.
 - **Log in.** This opens the 4zam sign-in page, where you choose Google, Microsoft or GitHub. A 4zam account keeps your balance across devices.
 
 Good to know:
@@ -30,10 +30,11 @@ Good to know:
 Rules:
 
 - One bet per round. The largest bet is 1,000,000.
-- Pull Out during the betting window cancels the bet and refunds it.
+- Once placed, a bet is locked in. Pull Out becomes available when the round starts.
 - Auto cash-out is sent from your browser tab, so keep the tab open and in front.
 - Crash points are capped at 50x. About 1 round in 33 crashes instantly at 1.00x, which gives the house an edge of about 3%.
-- Rounds only run while someone is on the game page. When nobody is there, the game pauses and starts again with the next visitor. The chart shows "Rounds are paused" while it waits.
+- Rounds only run while at least one player has Crash open. When nobody is connected, the game idles and starts again as soon as the next player arrives.
+- If no round can start (for example while a new fairness chain is being sealed), the chart shows "Rounds are paused".
 
 On the game page you also get:
 
@@ -75,9 +76,11 @@ The Wallets page shows each balance and its transaction history.
 Each crash point is fixed before betting opens. Crash uses a hash chain based on the Bustabit scheme:
 
 - **The chain.** The house generates a chain of 1,000,000 seeds where each seed is the SHA-256 hash of the next one. It publishes the last hash (the terminal hash) first.
-- **The salt.** At the same time it names a future Bitcoin block. Once that block is mined and has 6 confirmations, its hash becomes the client seed for every round in the chain. The house could not know that hash when it published the chain.
+- **The salt.** At the same time it names a future Bitcoin block. Once that block is mined and has 6 confirmations, its hash becomes the client seed for every round in the chain. If the chain was published before that block was mined, the house could not know the hash when it committed to the chain.
 - **Each round.** The round's seed hash is shown before betting opens. After the crash, the seed is revealed. It hashes to the published seed hash, and that hash is the previous round's seed, all the way back to the terminal hash.
 - **The crash point** comes from HMAC-SHA256 of the seed with the client seed and the round number (the nonce).
+
+Rounds from before the hash chain used an older rule where the house picked both seeds. The page says so.
 
 The Provably Fair page lists the published chain (terminal hash, commit time, salt block and its hash) and every round with its seeds. You can search by seed hash.
 

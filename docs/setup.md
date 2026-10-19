@@ -9,7 +9,7 @@
 
 - Docker with Docker Compose 2.24 or newer
 - Python 3, curl, `flock` and `ss` (used by the deploy script)
-- Node.js 20.19 or newer, only for working on the frontend alone
+- Node.js 20.19 or newer, for frontend development and frontend tests
 
 You do not need a Bitcoin node or a Redis server: the stack runs its own.
 
@@ -27,7 +27,7 @@ bash deploy/deploy.sh --stack local
 Then open <http://crash.localhost:18099>.
 
 !!! info "Rounds pause until a chain is sealed"
-    The game only runs rounds covered by a sealed fairness chain. A fresh local stack shows "Rounds are paused" until one is set up. The repository's fairness seeding runbook covers this.
+    The game only runs rounds covered by a sealed fairness chain. A fresh local stack shows "Rounds are paused" until one is set up. Sealing a chain needs internet access to public Bitcoin block explorers and a future Bitcoin block with 6 confirmations, which takes about two hours. The repository's fairness seeding runbook has the steps.
 
 ---
 
@@ -41,7 +41,7 @@ npm ci
 npm run dev
 ```
 
-The dev server runs on <http://localhost:5173> and proxies `/api` and `/ws` to the backend, so the app talks to it the same way it does in production.
+The dev server runs on <http://localhost:5173> and proxies `/api` and `/ws` to a backend at <http://localhost:8000>. Set `VITE_DEV_BACKEND` to use a backend somewhere else.
 
 ---
 
