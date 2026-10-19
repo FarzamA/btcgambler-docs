@@ -1,288 +1,124 @@
-# 🔍 Features
+# Features
 
 ---
 
-## 🔐 Authentication
+## Signing in
 
-BTCGambler provides a secure and seamless authentication system with support for:
+![The Crash welcome screen with Log in and Continue as Guest](media/img/landing.png)
 
-??? o-auth "Sign in with 4zam (Google, Microsoft or GitHub)"
-    <div style="display: flex; justify-content: center; margin: 1.5rem 0;">
-        <video 
-            src="./../media/mp4/login_modal_btc.mp4" 
-            autoplay 
-            muted 
-            playsinline 
-            loop 
-            style="max-width: 400px; border-radius: 12px;">
-        </video>
-    </div>
+There are two ways in:
 
-??? e-mail-registration "Email-based registration with background loading screen"  
-    <div style="display: flex; justify-content: center; margin: 1.5rem 0;">
-        <video 
-            src="./../media/mp4/email_signup_btc.mp4" 
-            autoplay 
-            muted 
-            playsinline 
-            loop 
-            style="max-width: 100%; border-radius: 12px;">
-        </video>
-    </div>
+- **Continue as Guest.** One click creates a guest player with a generated name (for example `player-ab23cd45ef`) and 1,000 FAKE. There is no password.
+- **Log in.** This opens the 4zam sign-in page, where you choose Google, Microsoft or GitHub. A 4zam account keeps your balance across devices.
 
-??? e-mail-verification "Email verification for user to be activated "  
-    <div style="display: flex; justify-content: center; margin: 1.5rem 0;">
-        <video 
-            src="./../media/mp4/email_verification_btc.mp4" 
-            autoplay 
-            muted 
-            playsinline 
-            loop 
-            style="max-width: 100%; border-radius: 12px;">
-        </video>
-    </div>
+Good to know:
 
-??? user-login "Username based login"  
-    <div style="display: flex; justify-content: center; margin: 1.5rem 0;">
-        <video 
-            src="./../media/mp4/username_login_btc.mp4" 
-            autoplay 
-            muted 
-            playsinline 
-            loop 
-            style="max-width: 100%; border-radius: 12px;">
-        </video>
-    </div>
-
-??? qr-code "Two-Factor Authentication (2FA) for enhanced security (optional)"  
-    <div style="display: flex; justify-content: center; margin: 1.5rem 0;">
-        <video 
-            src="./../media/mp4/2fa_setup_btc.mp4" 
-            autoplay 
-            muted 
-            playsinline 
-            loop 
-            style="max-width: 100%; border-radius: 12px;">
-        </video>
-    </div>
-
-??? e-mail-verification "Email-based password reset"  
-    <div style="display: flex; justify-content: center; margin: 1.5rem 0;">
-        <video 
-            src="./../media/mp4/forgot_pass_btc.mp4" 
-            autoplay 
-            muted 
-            playsinline 
-            loop 
-            style="max-width: 100%; border-radius: 12px;">
-        </video>
-    </div>
+- A guest session lasts 7 days and renews while you play.
+- Logging out leaves the guest and its balance behind. There is no way back into it. A guest that stays idle for 7 days is removed.
+- If you log in while playing as a guest, the guest becomes your 4zam account and keeps its balance. If that 4zam account has already played Crash, the guest balance is not merged into it.
+- Passwords and two-factor sign-in are managed in your 4zam account, not in Crash.
 
 ---
 
-## 🎮 How It Works
+## How a round works
 
-- The game starts at a 1.00x multiplier.
-- The multiplier increases in real time.
-- A randomly determined "crash point" is hidden from the user.
-- If the user cashes out before the crash, they win their bet multiplied by the current multiplier.
-- If they wait too long, the game crashes and they lose their bet.
+1. **Betting opens for 15 seconds.** Enter an amount and press Place Bet. You can also set an auto cash-out multiplier (1.01x or higher).
+2. **The round starts at 1.00x** and the multiplier climbs. It reaches 2x after about 12 seconds and 10x after about 38 seconds.
+3. **Pull out before the crash.** Press Pull Out or the Space key. Your bet is paid at the multiplier when the server received your cash-out.
+4. **The round crashes** at a point fixed before betting opened. Bets still riding lose.
 
-??? chart-line "Gameplay Demo"
-    <div style="display: flex; justify-content: center; margin: 1.5rem 0;">
-        <video 
-            src="./../media/mp4/crash_gameplay_demo.mp4" 
-            autoplay 
-            muted 
-            playsinline 
-            loop 
-            style="max-width: 100%; border-radius: 12px;">
-        </video>
-    </div>
+Rules:
 
----
+- One bet per round. The largest bet is 1,000,000.
+- Once placed, a bet is locked in. Pull Out becomes available when the round starts.
+- Auto cash-out is sent from your browser tab, so keep the tab open and in front.
+- Crash points are capped at 50x. About 1 round in 33 crashes instantly at 1.00x, which gives the house an edge of about 3%.
+- Rounds only run while at least one player has Crash open. When nobody is connected, the game idles and starts again as soon as the next player arrives.
+- If no round can start (for example while a new fairness chain is being sealed), the chart shows "Rounds are paused".
 
-## 👤 Guest User Functionality
+On the game page you also get:
 
-BTCGambler supports guest login for users who wish to explore without creating an account:
-
-- Guests can interact with the crash game temporarily, without registration
-- All guest-related data (e.g. bets, chat messages) is deleted upon logout or session expiration
-- Guests cannot access the Bitcoin faucet, make deposits/withdrawals, or edit profiles
-- Automatic cleanup — The system ensures full cleanup of guest activity to maintain a clean state
+- **Active Bets:** everyone's bet on the current round, its status and the result.
+- **History:** the last 5 crash points, colored by how high each round went.
+- **Game chat:** live chat for every player, guests included. Messages are up to 280 characters.
 
 ---
 
-## 🏠 Main Application View
+## Demo coins
 
-After logging in, users land on the game dashboard — a real-time interface for placing bets and chatting with others.
+Crash has two demo currencies. Neither has real value.
 
-??? sun-moon "Sleek dark-blue theme mode enabled by default, with an optional ultra dark mode for visual flexibility"
-    <div style="display: flex; justify-content: center; margin: 1.5rem 0;">
-        <video 
-            src="./../media/mp4/dark_mode_demo_btc.mp4" 
-            autoplay 
-            muted 
-            playsinline 
-            loop 
-            style="max-width: 100%; border-radius: 12px;">
-        </video>
-    </div>
+| Currency | What it is | Shown with |
+|---|---|---|
+| Fake Points (FAKE) | Play balance. Guests start with 1,000 FAKE. | 2 decimals |
+| Bitcoin (BTC) | Demo Bitcoin on a private regtest network | 8 decimals |
 
-??? chart-line "Main chart with gameplay and betting form"
-    <div style="display: flex; justify-content: center; margin: 1.5rem 0;">
-        <video 
-            src="./../media/mp4/chart_demo.mp4" 
-            autoplay 
-            muted 
-            playsinline 
-            loop 
-            style="max-width: 100%; border-radius: 12px;">
-        </video>
-    </div>
-
-??? message-circle-more "Live chat feature to interact with users while playing the game"
-    <div style="display: flex; justify-content: center; margin: 1.5rem 0;">
-        <video 
-            src="./../media/mp4/live_chat_demo.mp4" 
-            autoplay 
-            muted 
-            playsinline 
-            loop 
-            style="max-width: 400px; border-radius: 12px;">
-        </video>
-    </div>
-
-??? circle-dollar-sign "Switch between FAKE currency and BTC"
-    <div style="display: flex; justify-content: center; margin: 1.5rem 0;">
-        <video 
-            src="./../media/mp4/currency_switch.mp4" 
-            autoplay 
-            muted 
-            playsinline 
-            loop 
-            style="max-width: 100%; border-radius: 12px;">
-        </video>
-    </div>
+- The header shows your balance with a "demo coins" label at all times.
+- Pick the currency in the header dropdown. Your bets use that currency.
+- Bets settle instantly on the site's own ledger. Only the faucet and withdrawals use the Bitcoin test network.
 
 ---
 
-## 🎮 Betting Interface
+## Wallet
 
-The **Betting Interface** allows users to seamlessly participate in each round with a real-time, responsive experience. It’s designed for clarity, speed, and visual feedback—helping players make quick, informed decisions.
+The Wallets page shows each balance and its transaction history.
 
-Key features include:
-
-- Interactive interface to place and pull bets during live rounds  
-- Real-time display of active bets with instant outcome updates  
-- Visual feedback for wins and losses as they happen  
-- Dynamic history bar showcasing recent betting activity  
-- Color-coded multipliers for enhanced visual clarity and user experience  
-
-??? banknote "Betting Interface Demo"
-    <div style="display: flex; justify-content: center; margin: 1.5rem 0;">
-        <video 
-            src="./../media/mp4/betting_interface_demo.mp4" 
-            autoplay 
-            muted 
-            playsinline 
-            loop 
-            style="max-width: 100%; border-radius: 12px;">
-        </video>
-    </div>
+- **Faucet.** Claim 0.5 demo BTC once every 24 hours. The faucet is off while you hold 5 demo BTC or more, and it has daily limits per IP address and for the whole site.
+- **Withdrawals.** Send demo BTC to an address on the test network. A small network fee is added on top. A withdrawal confirms in about a minute and cannot be undone. There is a daily limit of 10 demo BTC.
+- **Transactions.** Bets, payouts, faucet claims, deposits and withdrawals all appear in the history. Incoming transfers show while they confirm.
 
 ---
 
-## 📊 Bet Tracking
+## Provably fair
 
-The **All Bets** page provides a comprehensive, timestamped log of all wagers placed across the platform. This feature enables users to monitor historical activity, analyze betting behavior, and ensure transparency.
+![The Provably Fair page with the hash chain commitment and the rounds table](media/img/provably-fair.png)
 
-Key features include:
+Each crash point is fixed before betting opens. Crash uses a hash chain based on the Bustabit scheme:
 
-- A sortable, tabular view of all recorded bets  
-- Filtering by username for targeted analysis  
-- Sorting options by bet amount, multiplier, winnings, and timestamp  
-- Display of seed hashes for each bet to support provable fairness verification 
+- **The chain.** The house generates a chain of 1,000,000 seeds where each seed is the SHA-256 hash of the next one. It publishes the last hash (the terminal hash) first.
+- **The salt.** At the same time it names a future Bitcoin block. Once that block is mined and has 6 confirmations, its hash becomes the client seed for every round in the chain. If the chain was published before that block was mined, the house could not know the hash when it committed to the chain.
+- **Each round.** The round's seed hash is shown before betting opens. After the crash, the seed is revealed. It hashes to the published seed hash, and that hash is the previous round's seed, all the way back to the terminal hash.
+- **The crash point** comes from HMAC-SHA256 of the seed with the client seed and the round number (the nonce).
 
-??? receipt "All Bets Page"
-    <div style="display: flex; justify-content: center; margin: 1.5rem 0;">
-        <video 
-            src="./../media/mp4/all_bets_demo.mp4" 
-            autoplay 
-            muted 
-            playsinline 
-            loop 
-            style="max-width: 100%; border-radius: 12px;">
-        </video>
-    </div>
+Rounds from before the hash chain used an older rule where the house picked both seeds. The page says so.
+
+The Provably Fair page lists the published chain (terminal hash, commit time, salt block and its hash) and every round with its seeds. You can search by seed hash.
+
+### Verify a round
+
+![The Verify dialog with passing checks for a round](media/img/verify.png)
+
+Press **Verify** on any round in the Provably Fair page. The checks run in your browser:
+
+- It recomputes the crash point and checks it matches the one shown.
+- It checks that the revealed seed hashes to the seed hash published before the round.
+- It shows the chain and the salt block, with a link to look the block up on mempool.space.
+- **Check the link to the commitment** hashes the seed back to the chain's terminal hash.
+- **Show the working** lists each step of the calculation.
+
+!!! warning "Trust limit"
+    The house generates the chain. Once the salt block is mined, it knows the coming crash points, though it cannot change them. The chain is only fair if it was published before that block was mined. The commit time shown is the site's own record, not an independent timestamp. Crash states this on the Provably Fair page.
+
+---
+
+## Bets
+
+- **All Bets** lists every bet on the site: player, amount, multiplier, net winnings, time and seed hash. Search by username and sort by any column except seed hash.
+- **My Bets** shows only your bets.
+- The seed hash links to that round on the Provably Fair page, where you can verify it.
 
 ---
 
-## 🔐 Provable Fairness
+## Profile and settings
 
-**Provable Fairness** is a cryptographic guarantee that ensures every crash result on the platform is unbiased and tamper-proof. This system allows users to independently verify that the outcome of each round was generated fairly—without any manipulation from the server or client.
-
-Key features of our implementation:
-
-- Every round is determined using a combination of **Server Seed**, **Client Seed**, and **Nonce**, hashed using HMAC-SHA256  
-- A **Server Seed Hash** is published *before* the round starts, locking in the outcome  
-- After the round ends, the **Server Seed** is revealed, allowing users to verify the crash point  
-- A built-in **Crash Point Verifier** lets users input the seeds and nonce to validate results themselves  
-- All rounds are stored and visible in the **Provably Fair** audit log for full transparency  
-- The fairness logic is open and documented—every player can inspect how crash points are calculated  
-
-Together, these features ensure that trust is not assumed—it’s *provable*.
-
-??? lock "Provable Fairness"
-    <div style="display: flex; justify-content: center; margin: 1.5rem 0;">
-        <video 
-            src="./../media/mp4/provable_fairness.mp4" 
-            autoplay 
-            muted 
-            playsinline 
-            loop 
-            style="max-width: 100%; border-radius: 12px;">
-        </video>
-    </div>
-
-??? chart-line "Distribution of Multipliers Over 10000 Iterations"
-    ![Guest Session Demo](media/png/crash_distribution.png)
----
-
-## 🪙 Bitcoin Integration
-
-To introduce realism and technical depth, the platform includes native Bitcoin-based betting functionality, simulating a real blockchain environment while preserving a seamless user experience.
-
-Key features include:
-
-- User-associated Bitcoin wallets for managing in-game funds
-- Ability to send BTC between users via unique wallet addresses
-- Transaction queuing and batching to simulate fee-efficient network behavior
-- Full transaction history with support for sorting, and auditability
-- Designed to mirror real-world blockchain dynamics within a controlled environment
-
-??? droplet "A 0.5 BTC faucet claimable every 24 hours for testing and gameplay"
-    <div style="display: flex; justify-content: center; margin: 1.5rem 0;">
-        <video 
-            src="./../media/mp4/faucet_demo.mp4" 
-            autoplay 
-            muted 
-            playsinline 
-            loop 
-            style="max-width: 100%; border-radius: 12px;">
-        </video>
-    </div>
-
-??? lock "Transaction Demo"
-    <div style="display: flex; justify-content: center; margin: 1.5rem 0;">
-        <video 
-            src="./../media/mp4/send_tx_demo.mp4" 
-            autoplay 
-            muted 
-            playsinline 
-            loop 
-            style="max-width: 100%; border-radius: 12px;">
-        </video>
-    </div>
+- **Profile:** your username and the color of your name in chat.
+- **Settings:** dark mode on or off (dark is the default) and the animated background on or off.
+- If your device asks for reduced motion, the animated background stays off.
 
 ---
+
+## On phones
+
+![The Crash game page on a phone during a round](media/img/game-phone.png){ width="320" }
+
+The game page stacks into one column on small screens. The chart, bet controls, active bets and chat all stay available.
