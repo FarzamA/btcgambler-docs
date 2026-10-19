@@ -1,47 +1,31 @@
-# BTCGambler
+# Crash
 
-Welcome to the public documentation for **BTCGambler** — a real-time crash gambling game built on Bitcoin and WebSockets.
+Crash is a real-time multiplayer crash game played with demo coins. Every round is provably fair, and you can check any round in your browser.
 
-📌 **Note:** The app now lives at **crash.4zam.dev** under its new name, **Crash**. Sign in with a 4zam account or play as a guest with demo coins (no real value).
+Formerly BTCGambler.
 
-👉 [Live Demo](https://crash.4zam.dev)
+[Play Crash](https://crash.4zam.dev)
 <span id="app-status-indicator" style="margin-left: 10px; font-weight: bold;"></span>
 
----
+!!! note "Demo coins only"
+    Crash uses demo coins. They have no real value. There is no way to pay in money or cash out.
 
-## 📌 Overview
-
-BTCGambler is a full-stack crypto gambling app that simulates a high-stakes crash curve with real Bitcoin transaction handling.
-
-It supports:
-
-- Real-time multiplayer gameplay
-- Secure wallet management using Bitcoin Core
-- Sign in with 4zam (Google, Microsoft or GitHub) or play as a guest
-- Transaction batching and payout logic
-- Interactive chart, chat, and betting interface
+![Crash game page during a round](media/img/game.png)
 
 ---
 
-## 📷 Demo
+## Overview
 
-??? chart-line "Gameplay Demo"
-    <div style="display: flex; justify-content: center; margin: 1.5rem 0;">
-        <video 
-            src="media/mp4/crash_gameplay_demo.mp4" 
-            autoplay 
-            muted 
-            playsinline 
-            loop 
-            style="max-width: 100%; border-radius: 12px;">
-        </video>
-    </div>
-<!-- ![Crash Gameplay](media/crash_demo.gif) -->
+- **Play in one click.** Continue as a guest, or log in with a 4zam account (Google, Microsoft or GitHub).
+- **Live rounds.** A multiplier climbs from 1.00x until it crashes. Pull out before the crash to win.
+- **Provably fair.** Each round is seeded from a published hash chain and a future Bitcoin block. A built-in verifier recomputes the crash point.
+- **Two demo currencies.** Fake Points (FAKE) and demo Bitcoin (BTC) on a private test network.
+- **Live chat** and a full bet history.
 
 ---
 
-## 📁 Docs
+## Docs
 
-- [Features](features.md)
-- [Architecture](architecture.md)
-- [Setup Instructions](setup.md)
+- [Features](features.md): how the game, sign-in, fairness and wallet work
+- [Architecture](architecture.md): the services behind the game
+- [Setup](setup.md): running Crash locally

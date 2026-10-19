@@ -1,4 +1,5 @@
-site_name: BTCGambler Documentation
+site_name: Crash Documentation
+site_description: Public docs for Crash, a provably fair crash game played with demo coins (formerly BTCGambler).
 theme:
   name: material
   palette:
@@ -12,6 +13,7 @@ markdown_extensions:
   - admonition
   - pymdownx.details
   - pymdownx.superfences
+  - attr_list
 extra_css:
   - stylesheets/custom-admonitions.css
 extra_javascript:
