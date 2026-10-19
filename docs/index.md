@@ -2,9 +2,9 @@
 
 Welcome to the public documentation for **BTCGambler** — a real-time crash gambling game built on Bitcoin and WebSockets.
 
-📌 **Note:** This project is home-hosted. The live demo is generally available **Monday - Friday between 9 AM and 5 PM EST**. If the link is temporarily down, please refer to this documentation to explore features, architecture, and usage.
+📌 **Note:** The app now lives at **crash.4zam.dev** under its new name, **Crash**. Sign in with a 4zam account or play as a guest with demo coins (no real value).
 
-👉 [Live Demo](https://btcgambler.duckdns.org/login)
+👉 [Live Demo](https://crash.4zam.dev)
 <span id="app-status-indicator" style="margin-left: 10px; font-weight: bold;"></span>
 
 ---
@@ -17,7 +17,7 @@ It supports:
 
 - Real-time multiplayer gameplay
 - Secure wallet management using Bitcoin Core
-- OAuth login (Google, GitHub, Facebook, Email)
+- Sign in with 4zam (Google, Microsoft or GitHub) or play as a guest
 - Transaction batching and payout logic
 - Interactive chart, chat, and betting interface
 

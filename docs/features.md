@@ -6,7 +6,7 @@
 
 BTCGambler provides a secure and seamless authentication system with support for:
 
-??? o-auth "OAuth login via Google, Facebook, or Github"
+??? o-auth "Sign in with 4zam (Google, Microsoft or GitHub)"
     <div style="display: flex; justify-content: center; margin: 1.5rem 0;">
         <video 
             src="./../media/mp4/login_modal_btc.mp4" 
