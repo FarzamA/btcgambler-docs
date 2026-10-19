@@ -22,7 +22,7 @@ jobs:
         run: |
           mkdir -p status
           echo "Checked: $(date -u)" > status/status.txt
-          curl -Is https://btcgambler.duckdns.org/login | head -n 1 >> status/status.txt
+          curl -Is https://crash.4zam.dev/ | head -n 1 >> status/status.txt
 
       - name: Commit and push
         env:
