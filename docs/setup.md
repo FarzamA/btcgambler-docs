@@ -27,7 +27,7 @@ bash deploy/deploy.sh --stack local
 Then open <http://crash.localhost:18099>.
 
 !!! info "Rounds pause until a chain is sealed"
-    The game only runs rounds covered by a sealed fairness chain. A fresh local stack shows "Rounds are paused" until one is set up. Sealing a chain needs internet access to public Bitcoin block explorers and a future Bitcoin block with 6 confirmations, which takes about two hours. The repository's fairness seeding runbook has the steps.
+    The game only runs rounds covered by a sealed fairness chain. A fresh local stack shows "Rounds are paused" until one is set up. Sealing a chain needs internet access to public Bitcoin block explorers and a future Bitcoin block with 6 confirmations, so expect about 2 to 3 hours from commit to the first round. The repository's fairness seeding runbook has the steps.
 
 ---
 
